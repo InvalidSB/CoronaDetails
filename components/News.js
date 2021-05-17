@@ -18,11 +18,13 @@ function NewsScreen({ navigation }) {
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button
         title="OnlineKhabar"
+        color="#ff5c33"
         style={{}}
         onPress={() => navigation.navigate('WebView',{src:"https://www.onlinekhabar.com/"})}
       />
       <Button
         title="अन्नपूर्ण पोष्ट"
+        color="green"
         onPress={() => navigation.navigate('WebView',{src:"http://annapurnapost.com/"})}
       />
       </View>
@@ -30,10 +32,12 @@ function NewsScreen({ navigation }) {
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button
         title="कान्तिपुर"
+        color="navy"
         onPress={() => navigation.navigate('WebView',{src:"https://ekantipur.com/"})}
       />
       <Button
         title="The  Himalayan  Times"
+        color="#86592d"
         onPress={() => navigation.navigate('WebView',{src:"https://thehimalayantimes.com/"})}
       />
       </View>
@@ -43,30 +47,37 @@ function NewsScreen({ navigation }) {
         title="
         Nagarik   News 
         "
+        color="skyblue"
         onPress={() => navigation.navigate('WebView',{src:"https://nagariknews.nagariknetwork.com/"})}
       />
       <Button
         title="रातोपाटी"
+        color="red"
         onPress={() => navigation.navigate('WebView',{src:"https://www.ratopati.com/"})}
       />
       </View>
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button title="सेतो पाटि"
+      color="black"
+      
         onPress={() => navigation.navigate('WebView',{src:"https://www.setopati.com/"})}
     
     />
       <Button
         title="Gorkha Patra Online"
+        color="gray"
         onPress={() => navigation.navigate('WebView',{src:"https://gorkhapatraonline.com/"})}
       />
      
       </View>
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button
+      color="blue"
         title="Mero   Lagani"
         onPress={() => navigation.navigate('WebView',{src:"https://merolagani.com/"})}
       />
       <Button
+        color="red"
         title="हाम्रो नेपाली पात्रो"
         onPress={() => navigation.navigate('WebView',{src:"https://www.hamropatro.com/"})}
       />
@@ -75,30 +86,36 @@ function NewsScreen({ navigation }) {
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button
         title="न्युज 24"
+        color="#808000"
         onPress={() => navigation.navigate('WebView',{src:"https://nepalnew24.com/"})}
       />
       <Button
         title="Nepal Stock Exchange"
+        color="#b800e6"
         onPress={() => navigation.navigate('WebView',{src:"http://www.nepalstock.com/"})}
       />
       </View>
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button
         title="Kathmandu Today"
+        color="#660000"
         onPress={() => navigation.navigate('WebView',{src:"https://www.kathmandutoday.com/"})}
       />
       <Button
         title="dcNepal"
+        color="#003366"
         onPress={() => navigation.navigate('WebView',{src:"https://www.dcnepal.com/"})}
       />
       </View>
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
           <Button
             title="nepalipaisa"
+            color="#e6e600"
             onPress={() => navigation.navigate('WebView',{src:"https://nepalipaisa.com/"})}
           />
       <Button
         title="gadgetbytenepal"
+        color="#00b300"
         onPress={() => navigation.navigate('WebView',{src:"https://www.gadgetbytenepal.com/"})}
       />
       </View>

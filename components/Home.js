@@ -204,11 +204,11 @@ const styles = StyleSheet.create({
         backgroundColor: "#000000a0",
             marginVertical:10,
             marginHorizontal:10,
-            padding:25,
+            padding:24,
             alignContent:"center",
             justifyContent:"center",
             textAlign:"center",
-            borderRadius:20,
+            borderRadius:30,
             
     },
     tdheading:{
