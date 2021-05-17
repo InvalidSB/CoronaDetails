@@ -9,6 +9,7 @@ const Home = () => {
     const [population,setPopulation]=useState()
     const [testperp,setTestperp]=useState()
     const [flaguri,setFlaguri]=useState()
+    const [active,setActive]=useState()
     const [cases,setCases]=useState()
     const [death,setDeath]=useState()
     const [recovered,setRecovered]=useState()
@@ -21,8 +22,10 @@ const Home = () => {
     // fetch('https://5cc814182dcd9d0014768ba9.mockapi.io/movies')
     .then((response) => response.json())
     .then((responseJson) => {
+        console.log(responseJson)
         const flaguri=responseJson.countryInfo.flag
         const cases= responseJson.cases
+        const active= responseJson.active
         const death= responseJson.deaths
         const test= responseJson.tests
         const recovered= responseJson.recovered
@@ -40,6 +43,7 @@ const Home = () => {
         setCases(cases)
         setDeath(death)
         setTest(test)
+        setActive(active)
         setRecovered(recovered)
         //about country
         setCountry(country)
@@ -164,7 +168,9 @@ const Home = () => {
                 </View>
 
             <View>
-
+          <View style={{marginVertical:10,marginBottom:40,padding:20,backgroundColor:"#808080",borderRadius:30}}>
+            <Text style={{textAlign:"center",color:"white",fontSize:18}}>There are still {active} Active corona cases in {country}</Text>
+          </View>
                 <View style={styles.secdetail}>
                 <Chip icon="pen" style={{textAlign:"center"}} selectedColor="red" >Total no of Corona cases</Chip>
                     <View style={{marginVertical:15}}>

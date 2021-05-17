@@ -7,7 +7,7 @@ const About = () => {
             <StatusBar barStyle="white-content" backgroundColor="blue" />
             <View style={{backgroundColor:"gray",marginVertical:20,padding:20,borderRadius:20}}>
                     <Text>This application is developed on the purpose of providing the data of Corona in Your Country !.</Text>
-                    <Text>You can see the total no of corona cases till now ,total no of death And also the today's Data.</Text>
+                    <Text>You can see the total no of corona cases till now ,total no of death ,today's data and many more</Text>
             </View>
 
             <View style={{marginVertical:20,backgroundColor:"gray",padding:20,borderRadius:20}}>

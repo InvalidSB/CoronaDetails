@@ -9,35 +9,11 @@ import About from './components/About'
 import News from './components/News'
 
 
-
-function HomeScreen() {
-  return (
-    <View >
-      <Home/>
-    </View>
-  );
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <News/>
-    </View>
-  );
-}
-
-function AboutScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <About/>
-    </View>
-  );
-}
-
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
+    <>
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -65,10 +41,11 @@ export default function App() {
           inactiveTintColor: 'gray',
         }}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="News" component={SettingsScreen} />
-        <Tab.Screen name="About" component={AboutScreen} />
+        <Tab.Screen name="Home" component={Home} />
+        <Tab.Screen name="News" component={News} />
+        <Tab.Screen name="About" component={About} />
       </Tab.Navigator>
     </NavigationContainer>
+    </>
   );
 }
