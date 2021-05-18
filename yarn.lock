@@ -4736,7 +4736,7 @@ native-base-shoutem-theme@0.3.1:
 
 native-base@^2.15.2:
   version "2.15.2"
-  resolved "https://registry.npmjs.org/native-base/-/native-base-2.15.2.tgz"
+  resolved "https://registry.yarnpkg.com/native-base/-/native-base-2.15.2.tgz#59988005532489a843998d8d6c24a6e61e8dfbef"
   integrity sha512-Oa42UOlOVgzA6oNc5ai86r3DFom9Wj5JuJ3ShsHmEkqhnqWw7TBKpuIDNV8Zt9NmycH5xMdMcgxliob6jniZjw==
   dependencies:
     "@codler/react-native-keyboard-aware-scroll-view" "1.0.1"

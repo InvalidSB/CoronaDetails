@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
-import { View,ScrollView,ImageBackground,Image,Button,RefreshControl,Modal, Text,StatusBar,StyleSheet,ToastAndroid } from 'react-native'
-import { Chip } from 'react-native-paper';
+import { View,ScrollView,ImageBackground,Share,RefreshControl,Modal, Text,StatusBar,StyleSheet,ToastAndroid } from 'react-native'
+import { Chip,Button } from 'react-native-paper';
 import { Card, Title } from 'react-native-paper';
 
 const Home = () => {
     const [country,setCountry]=useState()
     const [continent,setContinent]=useState()
     const [population,setPopulation]=useState()
+    const [oneCasePerPeople,setoneCasePerPeople]=useState()
     const [testperp,setTestperp]=useState()
     const [flaguri,setFlaguri]=useState()
     const [active,setActive]=useState()
@@ -38,6 +39,7 @@ const Home = () => {
         const continent=responseJson.continent
         const population= responseJson.population
         const testperp= responseJson.oneTestPerPeople
+        const oneCasePerPeople= responseJson.oneCasePerPeople
 
         setFlaguri(flaguri)
         setCases(cases)
@@ -50,6 +52,7 @@ const Home = () => {
         setContinent(continent)
         setPopulation(population)
         setTestperp(testperp)
+        setoneCasePerPeople(oneCasePerPeople)
         //aajako
         setTodayCases(todayCases)
         setTodayDeaths(todayDeaths)
@@ -82,6 +85,28 @@ const Home = () => {
 
       const [modalVisible, setModalVisible] = useState(false);
 
+      const onShare = async () => {
+        try {
+          const result = await Share.share({
+            message:
+              todayCases+" New Cases ...."+todayDeaths+" New Death ... & "+todayRecovered+" peoples get recovered Toady. "+" Stay safe, Stay Healthy, Keep maintaining Social Distance."+" -From CoronaDetailsApp (InvalidSB)" ,
+          });
+          if (result.action === Share.sharedAction) {
+            if (result.activityType) {
+              // shared with activity type of result.activityType
+            } else {
+              // shared
+            }
+          } else if (result.action === Share.dismissedAction) {
+            // dismissed
+          }
+        } catch (error) {
+          alert(error.message);
+        }
+      };
+
+
+
 
     return (
         <ScrollView style={styles.container}
@@ -99,13 +124,9 @@ const Home = () => {
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          
           setModalVisible(!modalVisible);
         }}
       >
-
-
-
 <View style={styles.centeredView}>
           <View style={styles.modalView}>
               <View style={{display:"flex",flexDirection:"row"}}>
@@ -115,6 +136,7 @@ const Home = () => {
             <Text style={{marginTop:20,marginBottom:10}}>Total Population</Text>
             <Chip icon="" style={{textAlign:"center"}} selectedColor="green" >{population}</Chip>
             <Text style={{marginTop:20,marginBottom:20,textAlign:"center"}}>One Test have been done per {testperp} people</Text>
+            <Text style={{marginBottom:20,textAlign:"center"}}>One new case per {oneCasePerPeople} people</Text>
 
             <Text
               style={[styles.button, styles.buttonClose]}
@@ -125,6 +147,8 @@ const Home = () => {
           </View>
         </View>
           </Modal>
+
+
                 <View 
                 style={styles.heading}
                 >
@@ -138,10 +162,10 @@ const Home = () => {
                 <View style={styles.todaydata}>
                
                 <Button
-        title="Today's DATA"
+       mode ="contained"
         color="black"
         onPress={() => showToastWithGravity()}
-      />
+      >Today's DATA</Button>
                 <View style={styles.firstdetail}>
                 <Card style={{marginVertical:10}}>
                     <Card.Content>
@@ -168,11 +192,13 @@ const Home = () => {
                 </View>
 
             <View>
+          <Button icon="share" onPress={onShare} mode ="contained" style={{marginBottom:20}}>Share</Button>
           <View style={{marginVertical:10,marginBottom:40,padding:20,backgroundColor:"#808080",borderRadius:30}}>
             <Text style={{textAlign:"center",color:"white",fontSize:18}}>There are still {active} Active corona cases in {country}</Text>
           </View>
+
                 <View style={styles.secdetail}>
-                <Chip icon="pen" style={{textAlign:"center"}} selectedColor="red" >Total no of Corona cases</Chip>
+                <Chip icon="pen" style={{textAlign:"center"}} selectedColor="blue" >Total no of Corona cases</Chip>
                     <View style={{marginVertical:15}}>
                         <Text style={{textAlign:"center",padding:10,fontSize:22,borderRadius:50,backgroundColor:"white",elevation:1}}>{cases}</Text>
                     </View>
