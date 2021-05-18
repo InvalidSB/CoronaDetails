@@ -77,7 +77,7 @@ const Home = () => {
 
     const showToastWithGravity = () => {
         ToastAndroid.showWithGravity(
-          "Data get refresh, everyday at 4PM NST ",
+          "Data get refresh, everyday at 5PM NST ",
           ToastAndroid.SHORT,
           ToastAndroid.CENTER,
         );

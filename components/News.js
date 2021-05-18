@@ -14,12 +14,12 @@ function NewsScreen({ navigation }) {
     <ScrollView style={{flex:1,backgroundColor:"White"}}>
     <StatusBar barStyle="white-content" backgroundColor="blue" />
       <View style={{paddingHorizontal:25,marginTop:20 }}>
-        <Chip icon="eye" style={{textAlign:"center"}} selectedColor="green" >  Visit any of these Website below</Chip>
+        <Chip icon="eye" style={{textAlign:"center"}} selectedColor="green" >  Visit any of the Website below</Chip>
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button
         title="OnlineKhabar"
         color="#ff5c33"
-        style={{}}
+        
         onPress={() => navigation.navigate('WebView',{src:"https://www.onlinekhabar.com/"})}
       />
       <Button
@@ -129,7 +129,7 @@ function WebSiteView({route}) {
     const {src}=route.params;
     const showToastWithGravity = () => {
         ToastAndroid.showWithGravity(
-          "Please Wait It takes few secend to load",
+          "Please Wait!!! It takes time",
           ToastAndroid.SHORT,
           ToastAndroid.CENTER,
         );
@@ -154,7 +154,7 @@ function News() {
   return (
     <>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Top 16 News Portal of Nepal " options={{ headerTitleAlign:"center",headerTintColor:"white", headerStyle: {
+        <Stack.Screen name="Top 16 News Portal from Nepal " options={{ headerTitleAlign:"center",headerTintColor:"white", headerStyle: {
               backgroundColor: 'black',
             },
     }} component={NewsScreen} />
