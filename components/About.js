@@ -48,8 +48,8 @@ const About = () => {
 
             <StatusBar barStyle="white-content" backgroundColor="blue" />
             <View style={{backgroundColor:"gray",marginVertical:10,padding:20,borderRadius:20}}>
-                    <Text style={{fontSize:14,textAlign:"center",textTransform:"uppercase"}}>
-                    This is a simple mobile appilcation to show the data of Covid.
+                    <Text style={{fontSize:13,textAlign:"center",textTransform:"uppercase"}}>
+                    This is a simple mobile appilcation to show the data of Covid19.
                     News page is all about the webview of those websites.
                     </Text>
             </View>

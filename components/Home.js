@@ -1,7 +1,11 @@
 import React,{useState} from 'react'
-import { View,ScrollView,ImageBackground,Share,RefreshControl,Modal, Text,StatusBar,StyleSheet,ToastAndroid } from 'react-native'
+import { View,ScrollView,Animated,ImageBackground,Share,RefreshControl,Modal,Image, Text,StatusBar,StyleSheet,ToastAndroid } from 'react-native'
 import { Chip,Button } from 'react-native-paper';
 import { Card, Title } from 'react-native-paper';
+
+
+
+
 
 const Home = () => {
     const [country,setCountry]=useState()
@@ -19,8 +23,14 @@ const Home = () => {
     const [todayDeaths,setTodayDeaths]=useState()
     const [todayRecovered,settodayRecovered]=useState()
 
+
+   
+
+
+
+    const GetData=()=>{
+
     fetch('https://disease.sh/v3/covid-19/countries/nepal')
-    // fetch('https://5cc814182dcd9d0014768ba9.mockapi.io/movies')
     .then((response) => response.json())
     .then((responseJson) => {
         console.log(responseJson)
@@ -60,7 +70,7 @@ const Home = () => {
     }).catch((error) => {
         console.log("Data fetching failed");
     });
-    
+  }
 
     const wait = (timeout) => {
         return new Promise(resolve => setTimeout(resolve, timeout));
@@ -70,14 +80,16 @@ const Home = () => {
 
     const onRefresh = React.useCallback(() => {
       setRefreshing(true);
+      GetData()
       showToastWithGravity()
       wait(2000).then(() => setRefreshing(false));
     }, []);
 
+    GetData()
 
     const showToastWithGravity = () => {
         ToastAndroid.showWithGravity(
-          "Data get refresh, everyday at 5PM NST ",
+          "Data get refreshed, everyday before 6PM NST ",
           ToastAndroid.SHORT,
           ToastAndroid.CENTER,
         );
@@ -137,7 +149,6 @@ const Home = () => {
             <Chip icon="" style={{textAlign:"center"}} selectedColor="green" >{population}</Chip>
             <Text style={{marginTop:20,marginBottom:20,textAlign:"center"}}>One Test have been done per {testperp} people</Text>
             <Text style={{marginBottom:20,textAlign:"center"}}>One new case per {oneCasePerPeople} people</Text>
-
             <Text
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
@@ -147,20 +158,20 @@ const Home = () => {
           </View>
         </View>
           </Modal>
-
-
                 <View 
                 style={styles.heading}
                 >
-                <ImageBackground source={{uri:flaguri}} style = {{justifyContent: "center",resizeMode: "center",}}>
+                <ImageBackground 
+            source={require("../assets/corona.png")}
+
+                 style = {{justifyContent: "center",resizeMode: "center",}}>
                     <View style={styles.headingInner} >
-                    <Text style={{fontSize:20,textAlign:"center",textTransform:"uppercase",color:"white",}}>Corona cases <Text onPress={() => setModalVisible(true)}>Nepal</Text>
-            
+                    <Text style={{fontSize:22,textAlign:"center",textTransform:"uppercase",color:"white",marginRight:10}}>Corona cases <Text  onPress={() => setModalVisible(true)}>in Nepal</Text>
+                    <Image source={{uri:flaguri}} style={{width:15,height:20}}/>
               </Text>
               </View></ImageBackground>
                 </View>
                 <View style={styles.todaydata}>
-               
                 <Button
        mode ="contained"
         color="black"
@@ -216,8 +227,8 @@ const Home = () => {
                         <Text style={{textAlign:"center",padding:10,fontSize:22,borderRadius:50,backgroundColor:"white"}}>{recovered}</Text>
                     </View>
                 </View>
-              
-            </View>
+           
+        </View>
         </ScrollView>
     )
 }
@@ -228,9 +239,9 @@ const styles = StyleSheet.create({
     container: {  backgroundColor:"#f2f2f2" ,padding:15,paddingBottom:20},
     headingInner:{
         backgroundColor: "#000000a0",
-            marginVertical:10,
-            marginHorizontal:10,
-            padding:24,
+            marginVertical:20,
+            marginHorizontal:20,
+            padding:10,
             alignContent:"center",
             justifyContent:"center",
             textAlign:"center",
