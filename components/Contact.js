@@ -64,7 +64,8 @@ export default class Contact extends Component {
   ) => {
     if (this.state.msg != null) {
       fetch(
-        "https://contactform-13f6e-default-rtdb.europe-west1.firebasedatabase.app/contact.json",
+        // "https://contactform-13f6e-default-rtdb.europe-west1.firebasedatabase.app/contact.json",
+        "https://reacttodo-73a2d-default-rtdb.firebaseio.com/fc_contact.json",
         {
           method: "POST",
           headers: {
@@ -152,7 +153,7 @@ export default class Contact extends Component {
               color: colors.black,
             }}
           >
-            Say Some Word !!!
+            Say Some Words !!!
           </Text>
 
           <Content>
@@ -172,7 +173,7 @@ export default class Contact extends Component {
                         }}
                       />
                       <Text style={{ flex: 1 }}>
-                        Thanks. We will get in touch with you as soon as
+                        Thanks. We'll try to get in touch with you as soon as
                         possible
                       </Text>
                     </Item>

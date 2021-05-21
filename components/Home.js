@@ -82,19 +82,30 @@ const Home = () => {
       setRefreshing(true);
       GetData()
       showToastWithGravity()
+      setCount(count+1)
       wait(2000).then(() => setRefreshing(false));
     }, []);
-
+   
     GetData()
 
     const showToastWithGravity = () => {
         ToastAndroid.showWithGravity(
-          "Data get refreshed, everyday before 6PM NST ",
+          "Data get refreshed, everyday before 7PM NST ",
           ToastAndroid.SHORT,
           ToastAndroid.CENTER,
         );
       };
-
+      const [count,setCount]=useState(0)
+    const showToastWithGravityT = () => {
+        ToastAndroid.showWithGravity(
+          " डाटा आउन समय लाग्यो,कृपया केहि बेर् कुर्नुहोस् | ",
+          ToastAndroid.LONG,
+          ToastAndroid.CENTER,
+        );
+      };
+      if (count == 3){
+        showToastWithGravityT()
+      }
       const [modalVisible, setModalVisible] = useState(false);
 
       const onShare = async () => {
@@ -126,6 +137,7 @@ const Home = () => {
             <RefreshControl
               refreshing={refreshing}
               onRefresh={onRefresh}
+
             />
           }
         >

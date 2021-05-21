@@ -65,20 +65,20 @@ const About = () => {
           marginVertical:10
         }}>
 <ImageBackground
-            style={{ width: "100%", height: 280, borderRadius: 15,justifyContent:"center",position:"relative" }}
+            style={{ width: "100%", height: 330, borderRadius: 15,justifyContent:"center",position:"relative" }}
             source={require("../assets/2.jpg")}
           >
-              <View style={{position:"absolute",backgroundColor:"black",paddingHorizontal:5,top:110,left:32}}>
+              <View style={{position:"absolute",backgroundColor:"black",paddingHorizontal:5,top:120,left:15}}>
 
-              <Text style={{color:"cyan"}}>S</Text>
-              <Text style={{color:"cyan"}}>U</Text>
-              <Text style={{color:"cyan"}}>J</Text>
-              <Text style={{color:"cyan"}}>A</Text>
-              <Text style={{color:"cyan"}}>N</Text>
+              <Text style={{color:"cyan",fontSize:18}}>S</Text>
+              <Text style={{color:"cyan",fontSize:18}}>U</Text>
+              <Text style={{color:"cyan",fontSize:18}}>J</Text>
+              <Text style={{color:"cyan",fontSize:18}}>A</Text>
+              <Text style={{color:"cyan",fontSize:18}}>N</Text>
             
               </View>
-              <View style={{position:"absolute",backgroundColor:"black",paddingHorizontal:5,bottom:30,left:32}}>
-                <Text style={{color:"cyan",letterSpacing:8}}>BHATTARAI</Text>
+              <View style={{position:"absolute",backgroundColor:"black",paddingHorizontal:5,bottom:30,left:15}}>
+                <Text style={{color:"cyan",letterSpacing:8,fontSize:18}}>BHATTARAI</Text>
               </View>
               <View style={{position:"absolute",top:10,right:0}}>
               <MaterialCommunityIcons

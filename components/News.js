@@ -11,10 +11,10 @@ function NewsScreen({ navigation }) {
   return (
 
       
-    <ScrollView style={{flex:1,backgroundColor:"White"}}>
+    <ScrollView style={{flex:1,backgroundColor:"#f2f2f2"}}>
     <StatusBar barStyle="white-content" backgroundColor="blue" />
       <View style={{paddingHorizontal:25,marginTop:20 }}>
-        <Chip icon="eye" style={{textAlign:"center"}} selectedColor="green" >  Visit any of the Website below</Chip>
+        <Chip icon="eye" style={{textAlign:"center"}} selectedColor="green" >  Visit any of the Websites below</Chip>
       <View style={{flexDirection:"row",marginVertical:15,justifyContent:"space-between"}}>
       <Button
         title="OnlineKhabar"
@@ -154,7 +154,7 @@ function News() {
   return (
     <>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Top 16 News Portal from Nepal " options={{ headerTitleAlign:"center",headerTintColor:"white", headerStyle: {
+        <Stack.Screen name="Top 16 News Portals from Nepal " options={{ headerTitleAlign:"center",headerTintColor:"white", headerStyle: {
               backgroundColor: 'black',
             },
     }} component={NewsScreen} />
